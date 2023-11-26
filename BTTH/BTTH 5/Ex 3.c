@@ -83,6 +83,41 @@ int main(){
 	        printf("\nKhong tim thay sinh vien co ma %s.\n", findstid);
 	    }
 }
+	printf("Ban co them nhan vien nao khong? [Y/N]: ");
+	scanf(" %c", &luaChon);
+	int add, j;
+	if (luaChon == 'y' || luaChon == 'Y') {
+	    printf("Nhap so nhan vien ban muon them: ");
+	    scanf("%d", &add);
+	    if (add < 100) {
+	        for (j = n; j < n + add; j++) {
+	            printf("Nhap thong tin cua nhan vien moi(nhan vien %d)\n",j+1);
+	            printf("Nhap ma so nhan vien: ");
+	            scanf("%s", &nv[j].maSo);
+	            printf("Nhap ho va ten nhan vien: ");
+	            getchar();
+	            fgets (nv[j].ten,sizeof(nv[j].ten),stdin);
+	            printf("Nhap chuc vu: ");
+	            scanf("%s", &nv[j].chucvu);
+	            printf("Nhap muc luong: ");
+	            scanf("%d", &nv[j].luong);
+	            printf("\n");
+		        printf("\nThem thanh cong!\n");
+	        }
+		        n = n + add;
+	    } else {
+	        printf("Danh sach da day, khong the them nhan vien moi.\n");
+		}
+	    printf("\nDanh sach cua nhan vien: \n");
+	    for (i = 0; i < n; i++) {
+	        printf("Thong tin cua nhan vien %d\n", i + 1);
+	        printf("Ma so nhan vien: %s\n", nv[i].maSo);
+	        printf("Ho va ten nhan vien: %s", nv[i].ten);
+	        printf("Chuc vu: %s\n", nv[i].chucvu);
+	        printf("Muc luong: %d\n", nv[i].luong);
+	        printf("\n");
+	    }
+	}
 	int ViTriXoa;
 	printf("Ban co xoa nhan vien nao khong? [Y/N]: ");
     scanf(" %c", &luaChon);
@@ -102,42 +137,6 @@ int main(){
 		   	printf("\n");
         }
 	}
-	printf("Ban co them nhan vien nao khong? [Y/N]: ");
-scanf(" %c", &luaChon);
-int add, j;
-if (luaChon == 'y' || luaChon == 'Y') {
-    printf("Nhap so nhan vien ban muon them: ");
-    scanf("%d", &add);
-
-    if (add < 100) {
-        for (j = n; j < n + add; j++) {
-            printf("Nhap thong tin cua nhan vien moi(nhan vien %d)\n",j+1);
-            printf("Nhap ma so nhan vien: ");
-            scanf("%s", &nv[j].maSo);
-            printf("Nhap ho va ten nhan vien: ");
-            getchar();
-            fgets (nv[j].ten,sizeof(nv[j].ten),stdin);
-            printf("Nhap chuc vu: ");
-            scanf("%s", &nv[j].chucvu);
-            printf("Nhap muc luong: ");
-            scanf("%d", &nv[j].luong);
-            printf("\n");
-	        printf("\nThem thanh cong!\n");
-        }
-	        n = n + add;
-    } else {
-        printf("Danh sach da day, khong the them nhan vien moi.\n");
-	}
-    printf("\nDanh sach cua nhan vien: \n");
-    for (i = 0; i < n; i++) {
-        printf("Thong tin cua nhan vien %d\n", i + 1);
-        printf("Ma so nhan vien: %s\n", nv[i].maSo);
-        printf("Ho va ten nhan vien: %s", nv[i].ten);
-        printf("Chuc vu: %s\n", nv[i].chucvu);
-        printf("Muc luong: %d\n", nv[i].luong);
-        printf("\n");
-    }
-}
  	
 	return 0;
 }
