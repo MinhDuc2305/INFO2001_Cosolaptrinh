@@ -47,7 +47,7 @@ int main() {
 	}
 	selectionSort(arr, n);
 	printf("\n");
-	printf("Mang sap xep selection sort\n");//mat 2.49s
+	printf("Mang sap xep selection sort\n");//mat 3.27s
 	for (i = 0; i < n; i++) {
 		printf("%d\t", arr[i]);
 	}
